@@ -1,16 +1,15 @@
-import React  from 'react';
+import React, { Component } from 'react'
 
-export default class Gallery extends React.Component{
-    render(){
+export class Gallery extends Component {
+    render() {
         return (
             <div>
-            {
+                {
                 this.props.items.map((item , i) => {
                     let {title, imageLinks , infoLink} = item.volumeInfo
                     return (
                         <a href ={infoLink}
                         target = "_blank"
-                        rel="noreferrer"
                         key={i} className = "book">
                         <img 
                         src ={imageLinks !== undefined? imageLinks.thumbnail : ''} 
@@ -23,8 +22,10 @@ export default class Gallery extends React.Component{
                         
                     );
                 })
-            }</div>
-
-        );
+            }
+            </div>
+        )
     }
 }
+
+export default Gallery
