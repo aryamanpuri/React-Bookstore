@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React , {Component} from 'react';
+import {FormGroup, FormControl,InputGroup, Glyphicon} from 'react-bootstrap';
 
-export class Gallery extends Component {
-    render() {
+export default class Gallery extends React.Component{
+    render(){
         return (
             <div>
-                {
+            {
                 this.props.items.map((item , i) => {
                     let {title, imageLinks , infoLink} = item.volumeInfo
                     return (
@@ -22,10 +23,8 @@ export class Gallery extends Component {
                         
                     );
                 })
-            }
-            </div>
-        )
+            }</div>
+
+        );
     }
 }
-
-export default Gallery
